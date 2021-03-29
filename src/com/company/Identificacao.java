@@ -1,5 +1,9 @@
 package com.company;
 
+enum Pais {
+    SEM_PAIS, PORTUGAL, ESPANHA, FRANCA, ITALIA, ALEMANHA, INGLATERRA
+}
+
 public class Identificacao
 {
     protected String nome;
@@ -36,7 +40,14 @@ public class Identificacao
         return (this.nome.equals(id.getNome()) &&
                 this.idade == id.getIdade() );
     }
-    public String toString () { return this.nome + " tem " + this.idade + " anos de idade";}
+    public String toString () {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getNome());
+        sb.append(";");
+        sb.append(this.getIdade());
+
+        return sb.toString();
+    }
     public Identificacao clone () { return new Identificacao(this); }
 }
 

@@ -13,31 +13,51 @@ public class ManipuladorFicheiro
     private File file;
     private Scanner scan;
 
-    public ManipuladorFicheiro(String path) throws IOException {
-        //this.filePath =
-        //writer = new FileWriter(path);
+    public ManipuladorFicheiro(String path) {
+        this.filePath = path;
     }
 
     public Estado leEstado () {
-        //file = new File(path);
-        //scan = new Scanner(file);
+        this.file = new File(filePath);
+        Estado estado = new Estado();
+        try {
+            this.scan = new Scanner(this.file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return estado;
     }
 
     public void escreveEstado (Estado e) {
-        String content = "";
-        //content = e.getX() + " " + e.getY() + " " + e.getZ();
+        StringBuilder sb = new StringBuilder();
+
+        // Tenta abrir ficheiro para escrever
         try {
-            this.writer.write(content);
+            this.writer = new FileWriter(this.filePath);
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
 
+        // Prepara string dos jogadores
+        for (Jogador j : e.getJogadores()) {
+            sb.append(j.toString());
+            sb.append("\n");
+        }
+
+        // Escreve no ficheiro
+        try {
+            this.writer.write(sb.toString());
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+
+        // Fecha ficheiro
         try {
             writer.close();
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
     }
-
 
 }

@@ -25,13 +25,13 @@ public class Equipa
     }
 
 
-    public AtributosEquipa getAtributosEquipa() {
-        return atributosEquipa;
-    }
+    public AtributosEquipa getAtributosEquipa() { return this.atributosEquipa; }
 
     public IdentificacaoEquipa getId() {
-        return id;
+        return this.id;
     }
+
+    public ArrayList<Jogador> getListaJogadores () { return this.listaJogadores; }
 
     @Override
     public String toString() {

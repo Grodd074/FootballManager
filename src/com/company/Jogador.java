@@ -1,26 +1,23 @@
 package com.company;
 
 
-enum PosicaoNoCampo {
-    GUARDA_REDES, DEFESA, MEDIO, AVANCADO, LATERAL;
-}
 
 public class Jogador
 {
-    private Identificacao id;
+    private IdentificacaoJogador id;
     private Atributos atributos;
 
     public Jogador ()
     {
-        this.atributos = new Atributos();
-        this.id         = new Identificacao();
+        this.atributos  = new Atributos();
+        this.id         = new IdentificacaoJogador();
     }
 
-    public Jogador (Atributos h, Identificacao id)
+    public Jogador (Atributos h, IdentificacaoJogador id)
     {
         this.atributos = h;
         this.id = id;
-    };
+    }
 
     public Jogador (Jogador j)
     {
@@ -28,17 +25,18 @@ public class Jogador
         this.setId(j.getId());
     }
 
-    public Identificacao getId () { return this.id; }
+    public IdentificacaoJogador getId () { return this.id; }
     public Atributos getAtributos () { return this.atributos; }
 
-    public void setId (Identificacao id) { this.id = id; }
+    public void setId (IdentificacaoJogador id) { this.id = id; }
     public void setHabilidade (Atributos h) { this.atributos = h; }
 
     public String toString () {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.getId().getNome());
-        sb.append(" ");
-        sb.append(this.getAtributos().getHabilidade());
+        sb.append(this.getId());
+        sb.append(";");
+        sb.append(this.getAtributos());
+
         return sb.toString();
     }
 

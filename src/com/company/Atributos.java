@@ -2,9 +2,9 @@ package com.company;
 
 public class Atributos
 {
-    // Numa escala de 0-10 estrelas
+    // Numa escala de 1-20 estrelas
     protected float habilidade;
-    public void Atributos () {
+    public Atributos () {
         this.habilidade = 0;
     }
     public float getHabilidade() { return this.habilidade; }

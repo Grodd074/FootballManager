@@ -72,9 +72,23 @@ public class AtributosJogador extends Atributos
                 this.capacidadeDePasse == (h.getCapacidaDePasse()));
     }
     public String toString () {
-        return "habil: " + getHabilidade() + " vel: " + this.getVelocidade() + " resis: " + this.getResistencia() + " dex: " + this.getDestreza()
-                + " impulsao " + this.getImpulsao() + " jogoDeCabeca " + this.getJodoDeCabeca() + " remate " +
-                this.getRemate() + " capacidadeDePasse " + this.getCapacidaDePasse();
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getHabilidade());
+        sb.append(";");
+        sb.append(this.getVelocidade());
+        sb.append(";");
+        sb.append(this.getResistencia());
+        sb.append(";");
+        sb.append(this.getDestreza());
+        sb.append(";");
+        sb.append(this.getImpulsao());
+        sb.append(";");
+        sb.append(this.getJodoDeCabeca());
+        sb.append(";");
+        sb.append(this.getRemate());
+        sb.append(";");
+        sb.append(this.getCapacidaDePasse());
+        return sb.toString();
     }
 
     public Atributos clone () { return new AtributosJogador(this); }

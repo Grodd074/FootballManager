@@ -39,6 +39,6 @@ public class AtributosRedes extends AtributosJogador
     }
 
     public String toString () {
-        return super.toString() + " flex " + getFlexibilidade();
+        return super.toString() + ";" + getFlexibilidade();
     }
 }
