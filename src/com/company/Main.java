@@ -60,5 +60,8 @@ public class Main {
         Estado e = new Estado(e1.getListaJogadores());
         ManipuladorFicheiro f = new ManipuladorFicheiro("save.csv");
         f.escreveEstado(e);
+
+        // Leitura do estado
+        f.leEstado();
     }
 }

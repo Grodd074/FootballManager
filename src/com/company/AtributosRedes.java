@@ -11,13 +11,7 @@ public class AtributosRedes extends AtributosJogador
 
     public AtributosRedes (float v, float res, float d, float i, float jdc, float r, float cdp, float flex)
     {
-        this.velocidade = v;
-        this.resistencia = res;
-        this.destreza = d;
-        this.impulsao = i;
-        this.jodoDeCabeca = jdc;
-        this.remate = r;
-        this.capacidadeDePasse = cdp;
+        super(v, res, d, i, jdc, r, cdp);
         this.flexibilidade = flex;
     }
 
